@@ -1,29 +1,27 @@
 <?php
 
-class AuthModel extends CI_Model
+class PetugasModel extends CI_Model
 {
 
-    public function registerMasyarakatValidation()
+    // Validation
+    public function validation()
     {
-        $this->form_validation->set_rules('nik', 'NIK', 'required|trim')
-            ->set_rules('nama', 'Nama', 'required|trim')
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim')
             ->set_rules('username', 'Username', 'required|trim')
             ->set_rules('password', 'Password', 'required|min_length[5]')
             ->set_rules('telp', 'Telepon', 'required|integer|min_length[9]');
     }
 
     // Form Handler
-    public function registerMasyarakat()
+    public function register()
     {
-        $nik = $this->input->post('nik', true);
         $nama = $this->input->post('nama', true);
         $username = $this->input->post('username', true);
         $password = $this->input->post('password', true);
         $finalPassword = password_hash($password, PASSWORD_DEFAULT);
         $telp = $this->input->post('telp', true);
         try {
-            $this->db->insert('masyarakat', [
-                'nik' => $nik,
+            $this->db->insert('petugas', [
                 'nama' => $nama,
                 'username' => $username,
                 'password' => $finalPassword,
@@ -31,11 +29,17 @@ class AuthModel extends CI_Model
                 'id_level' => 1
             ]);
             flashAlert('success', 'Berhasil Input Data');
-            redirect('auth/registerMasyarakat');
+            redirect('petugas');
         } catch (Exception $e) {
             flashAlert('error', $e->getMessage());
-            redirect('auth/registerMasyarakat');
+            redirect('petugas');
         }
+    }
+
+    // API
+    public function getAllPetugas()
+    {
+        return $this->db->get('petugas')->result();
     }
 
 }

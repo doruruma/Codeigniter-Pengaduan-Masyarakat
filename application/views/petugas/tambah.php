@@ -1,19 +1,20 @@
 <div class="swal" data-type="<?= $this->session->flashdata('type') ?>" data-text="<?= $this->session->flashdata('text') ?>"></div>
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb bg-white shadow-sm">
+    <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>">Admin</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Tambah Petugas</li>
+  </ol>
+</nav>
+
 <div class="container" style="margin-top:40px">
   <div class="row justify-content-center">
     
     <div class="col-lg-6 col-md-6 col-sm-12">
-      <div class="h4 text-center font-weight-bold mb-3">REGISTER MASYARAKAT</div>
+      <div class="h4 text-center text-muted mb-3">TAMBAH PETUGAS</div>
       <div class="card shadow-sm border-light">
         <div class="card-body">
           <form action="" method="POST">
-
-          <div class="form-group">
-            <label for="nik">NIK</label>
-            <input type="text" name="nik" id="nik" class="form-control form-control-sm" value="<?= set_value('nik') ?>">
-            <small class="text-danger"><?= form_error('nik') ?></small>
-          </div>
 
           <div class="form-group">
             <label for="nama">Nama</label>

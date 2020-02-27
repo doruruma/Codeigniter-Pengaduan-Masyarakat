@@ -13,7 +13,7 @@ class Auth extends CI_Controller
     public function index()
     {
         $this->AuthModel->registerPetugasValidation();
-        if ($this->form_validation->run()) { 
+        if ($this->form_validation->run()) {
             $this->AuthModel->registerPetugas();
         } else {
             $data = [
@@ -25,4 +25,18 @@ class Auth extends CI_Controller
         }
     }
 
+    public function registerMasyarakat()
+    {
+        $this->AuthModel->registerMasyarakatValidation();
+        if ($this->form_validation->run()) {
+            $this->AuthModel->registerMasyarakat();
+        } else {
+            $data = [
+                'title' => 'Pengaduan | Register Masyarakat'
+            ];
+            $this->load->view('layouts/header', $data)
+                ->view('auth/registerMasyarakat')
+                ->view('layouts/footer');
+        }
+    }
 }

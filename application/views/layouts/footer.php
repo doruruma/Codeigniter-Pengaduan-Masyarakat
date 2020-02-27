@@ -1,3 +1,6 @@
+  <!-- footer -->
+  <div class="h6 py-4 bg-white shadow mt-5 text-center mb-0">Copyright@2020</div>
+
   <!-- Bootstrap core JavaScript-->
   <script src="<?= base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
   <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
@@ -9,9 +12,17 @@
   <!-- SweetAlert Plugin -->
   <script src="<?= base_url('assets/vendor/sweetalert2.all.min.js') ?>"></script>
 
+  <!-- Custom Plugin -->
+  <?php foreach ($pluginJS as $js) : ?>
+    <script src="<?= base_url('assets/vendor/' . $js) ?>"></script>
+  <?php endforeach; ?>
+
   <!-- Custom scripts for all pages-->
   <script src="<?= base_url('assets/js/swal.js') ?>"></script>
 
-</body>
+  <!-- Custom scripts depends on controller -->
+  <script src="<?= base_url('assets/js/' . $pageJS) ?>"></script>
 
-</html>
+  </body>
+
+  </html>
