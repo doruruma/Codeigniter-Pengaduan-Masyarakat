@@ -12,7 +12,7 @@ class Petugas extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Pengaduan | Petugas',
+            'title' => 'E-report | Petugas',
             'pageJS' => 'petugas/index.js',
             'pluginCSS' => ['datatables/dataTables.bootstrap4.min.css'],
             'pluginJS' => ['datatables/jquery.dataTables.js', 'datatables/dataTables.bootstrap4.min.js'],
@@ -32,12 +32,13 @@ class Petugas extends CI_Controller
             $this->petugas->register();
         } else {
             $data = [
-                'title' => 'Pengaduan | Tambah Petugas',
+                'title' => 'E-report | Tambah Petugas',
                 'pluginCSS' => [],
                 'pluginJS' => []
             ];
             $this->load->view('layouts/header', $data)
                 ->view('layouts/nav')
+                ->view('layouts/sidebar')
                 ->view('petugas/tambah')
                 ->view('layouts/footer');
         }

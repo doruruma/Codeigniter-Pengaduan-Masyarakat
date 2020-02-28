@@ -8,6 +8,14 @@ small{
   font-size: 11px !important;
 }
 
+/* Component */
 .card{
   border-radius: 0px !important;
 }
+#sidebar{
+  background: rgb(23, 23, 141) !important;
+}
+.nav-link:hover{
+  color: slategray !important;
+}
+/*  */

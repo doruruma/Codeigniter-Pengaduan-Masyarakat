@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white shadow-sm">
   <div class="container">
-    <a class="navbar-brand text-info font-weight-bold" href="#">Pengaduan</a>
+    <a class="navbar-brand text-info font-weight-bold" href="#">E-report</a>
     <button class="btn btn-outline-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fas fa-fw fa-bars text"></i>
     </button>

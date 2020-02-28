@@ -6,7 +6,7 @@ $(document).ready(function () {
     Swal.fire({
       title: type.toUpperCase(),
       text: text,
-      icon: type
+      type: type
     })
   }
 

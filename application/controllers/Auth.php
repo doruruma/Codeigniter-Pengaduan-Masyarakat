@@ -7,24 +7,24 @@ class Auth extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('AuthModel');
+        $this->load->model('AuthModel', 'auth');
     }
 
     public function index()
     {
-        $this->AuthModel->registerPetugasValidation();
+        $this->auth->validation();
         if ($this->form_validation->run()) {
-            $this->AuthModel->registerPetugas();
+            $this->auth->login();
         } else {
             $data = [
-                'title' => 'Pengaduan | Register Petugas'
+                'title' => 'E-report | Register Petugas',
             ];
             $this->load->view('layouts/header', $data)
-                ->view('auth/registerPetugas')
+                ->view('auth/login')
                 ->view('layouts/footer');
         }
     }
-
+    
     public function registerMasyarakat()
     {
         $this->AuthModel->registerMasyarakatValidation();
@@ -32,7 +32,7 @@ class Auth extends CI_Controller
             $this->AuthModel->registerMasyarakat();
         } else {
             $data = [
-                'title' => 'Pengaduan | Register Masyarakat'
+                'title' => 'E-report | Register Masyarakat'
             ];
             $this->load->view('layouts/header', $data)
                 ->view('auth/registerMasyarakat')

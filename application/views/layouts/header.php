@@ -18,9 +18,11 @@
   <link rel="stylesheet" href="<?= base_url('assets/css/main.css') ?>">
 
   <!-- Plugin CSS -->
-  <?php foreach ($pluginCSS as $css) : ?>
-    <link rel="stylesheet" href="<?= base_url('assets/vendor/' . $css) ?>">
-  <?php endforeach; ?>
+  <?php if (isset($pluginCSS)) : ?>
+    <?php foreach ($pluginCSS as $css) : ?>
+      <link rel="stylesheet" href="<?= base_url('assets/vendor/' . $css) ?>">
+    <?php endforeach; ?>
+  <?php endif; ?>
 
   <!-- Custom styles for this web -->
   <link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">

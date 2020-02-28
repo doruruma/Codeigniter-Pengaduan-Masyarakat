@@ -42,4 +42,9 @@ class PetugasModel extends CI_Model
         return $this->db->get('petugas')->result();
     }
 
+    public function getPetugas($id)
+    {
+        return $this->db->get_where('petugas', ['id', $id])->row();
+    }
+
 }
