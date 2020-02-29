@@ -6,6 +6,7 @@ class Pengaduan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        isLogin();
         $this->load->model('PengaduanModel', 'pengaduan');
     }
 
@@ -21,6 +22,7 @@ class Pengaduan extends CI_Controller
         ];
         $this->load->view('layouts/header', $data)
             ->view('layouts/nav')
+            ->view('layouts/sidebar')
             ->view('pengaduan/index')
             ->view('layouts/footer');
     }

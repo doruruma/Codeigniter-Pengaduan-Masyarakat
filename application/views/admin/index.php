@@ -13,7 +13,7 @@
             <div class="h2 text-center">128</div>
           </div>
           <div class="card-footer border-dark">
-            <a href="<?= base_url('pengaduan/') ?>" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
+            <a href="<?= base_url('pengaduan') ?>" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@
             <div class="h2 text-center">12</div>
           </div>
           <div class="card-footer border-primary">
-            <a href="#" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
+            <a href="<?= base_url('petugas') ?>" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
           </div>
         </div>
       </div>
@@ -33,11 +33,11 @@
       <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
         <div class="card bg-info shadow-sm">
           <div class="card-body text-white">
-            <div class="h5"><i class="fas fa-fw fa-map fa-lg"></i> Terproses</div>
+            <div class="h5"><i class="fas fa-fw fa-map fa-lg"></i> Ditanggapi</div>
             <div class="h2 text-center">90</div>
           </div>
           <div class="card-footer border-info">
-            <a href="#" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
+            <a href="<?= base_url('pengaduan/ditanggapi') ?>" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@
             <div class="h2 text-center">9280</div>
           </div>
           <div class="card-footer border-success">
-            <a href="#" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
+            <a href="<?= base_url('masyarakat') ?>" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@
             </table>
           </div>
           <div class="card-footer bg-white border-white">
-            <a href="<?= base_url('petugas/') ?>" class="btn-link btn-sm font-weight-bold px-2">Selengkapnya</a>
+            <a href="<?= base_url('petugas') ?>" class="btn-link btn-sm font-weight-bold px-2">Selengkapnya</a>
             <a href="<?= base_url('petugas/tambah') ?>" class="btn-link btn-sm font-weight-bold px-2">Tambah Petugas</a>
           </div>
         </div>
@@ -152,7 +152,7 @@
             </table>
           </div>
           <div class="card-footer bg-white border-white">
-            <a href="#" class="btn-link btn-sm font-weight-bold px-2">Selengkapnya</a>
+            <a href="<?= base_url('pengaduan/ditanggapi') ?>" class="btn-link btn-sm font-weight-bold px-2">Selengkapnya</a>
           </div>
         </div>
       </div>

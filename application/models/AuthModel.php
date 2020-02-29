@@ -28,7 +28,7 @@ class AuthModel extends CI_Model
         var_dump($data);
         if ($data) {
             if (password_verify($password, $data->password)) {
-                setSession($data->id, $data->username, $data->id_level);
+                setSessionPetugas($data->id, $data->username, $data->id_level);
                 $data->id_level == 1 ? redirect('admin') : ($data->id_level == 2 ? redirect('petugas') : var_dump($data->id_level));
             } else {
                 flashAlert('error', 'Username atau Password Tidak Valid');

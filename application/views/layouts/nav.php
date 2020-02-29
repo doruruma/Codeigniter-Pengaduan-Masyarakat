@@ -6,10 +6,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
+        <li class="nav-item nav-dashboard">
           <a href="<?= base_url('admin') ?>" class="nav-link">Dashboard</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item nav-profile">
           <a href="<?= base_url('admin/profile') ?>" class="nav-link" href="#">Profile</a>
         </li>
         <li class="nav-item">
