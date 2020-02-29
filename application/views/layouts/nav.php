@@ -1,22 +1,19 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white shadow-sm">
   <div class="container">
-    <a class="navbar-brand text-info font-weight-bold" href="#">E-report</a>
+    <a class="navbar-brand text-info font-weight-bold" href="<?= base_url('') ?>">E-report</a>
     <button class="btn btn-outline-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fas fa-fw fa-bars text"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a href="<?= base_url('admin') ?>" class="nav-link">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a href="<?= base_url('admin/profile') ?>" class="nav-link" href="#">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a href="<?= base_url('auth/logout') ?>" class="nav-link" href="#">Logout</a>
         </li>
       </ul>
     </div>

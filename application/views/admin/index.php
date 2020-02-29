@@ -1,9 +1,62 @@
-<div class="col-lg col-md col-sm mb-5">
+<div class="col-lg-10 col-md-10 col-sm-11 col-12">
 
   <div class="swal" data-type="<?= $this->session->flashdata('type') ?>" data-text="<?= $this->session->flashdata('text') ?>"></div>
 
-  <div class="container" style="margin-top:40px; min-height:410px">
-    <div class="h3 text-muted mb-4">Main Menu</div>
+  <div class="container" style="margin-top:40px">
+    <div class="h3 text-muted">Main Menu</div>
+    <div class="row no-gutters">
+
+      <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
+        <div class="card bg-dark shadow-sm">
+          <div class="card-body text-white">
+            <div class="h5"><i class="fas fa-fw fa-file fa-lg"></i> Pengaduan</div>
+            <div class="h2 text-center">128</div>
+          </div>
+          <div class="card-footer border-dark">
+            <a href="<?= base_url('pengaduan/') ?>" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
+        <div class="card bg-primary shadow-sm">
+          <div class="card-body text-white">
+            <div class="h5"><i class="fas fa-fw fa-user-tie fa-lg"></i> Petugas</div>
+            <div class="h2 text-center">12</div>
+          </div>
+          <div class="card-footer border-primary">
+            <a href="#" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
+        <div class="card bg-info shadow-sm">
+          <div class="card-body text-white">
+            <div class="h5"><i class="fas fa-fw fa-map fa-lg"></i> Terproses</div>
+            <div class="h2 text-center">90</div>
+          </div>
+          <div class="card-footer border-info">
+            <a href="#" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
+        <div class="card bg-success shadow-sm">
+          <div class="card-body text-white">
+            <div class="h5"><i class="fas fa-fw fa-users fa-lg"></i> Masyarakat</div>
+            <div class="h2 text-center">9280</div>
+          </div>
+          <div class="card-footer border-success">
+            <a href="#" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <hr>
+    <div class="h4 text-muted mt-4">Data Terbaru</div>
     <div class="row no-gutters">
 
       <div class="col-lg-5 col-md-12 col-sm-12 px-1 py-1">
@@ -106,6 +159,3 @@
 
     </div>
   </div>
-
-</div>
-</div>

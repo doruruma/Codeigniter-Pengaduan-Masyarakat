@@ -10,9 +10,9 @@
   </nav>
 
   <div class="container" style="margin-top:40px">
-    <div class="row">
+    <div class="row justify-content-center">
 
-      <div class="col-lg-12 col-md-6 col-sm-12">
+      <div class="col-lg-11 col-md-6 col-sm-12">
         <div class="h4 text-muted mb-3">TAMBAH PETUGAS</div>
         <div class="card shadow-sm border-light">
           <div class="card-body">
