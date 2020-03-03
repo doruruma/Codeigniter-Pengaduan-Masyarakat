@@ -26,7 +26,7 @@ class PetugasModel extends CI_Model
                 'username' => $username,
                 'password' => $finalPassword,
                 'telp' => $telp,
-                'id_level' => 1
+                'id_level' => 2
             ]);
             flashAlert('success', 'Berhasil Input Data');
             redirect('petugas');
@@ -39,12 +39,12 @@ class PetugasModel extends CI_Model
     // API
     public function getAllPetugas()
     {
-        return $this->db->get('petugas')->result();
+        return $this->db->get_where('petugas', ['id_level' => 2])->result();
     }
 
     public function getPetugas($id)
     {
-        return $this->db->get_where('petugas', ['id', $id])->row();
+        return $this->db->get_where('petugas', ['id' => $id])->row();
     }
 
 }

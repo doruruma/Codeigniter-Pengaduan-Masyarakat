@@ -6,6 +6,7 @@ class Petugas extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        isLogin('admin');
         $this->load->model('PetugasModel', 'petugas');
     }
 
@@ -21,7 +22,21 @@ class Petugas extends CI_Controller
         ];
         $this->load->view('layouts/header', $data)
             ->view('layouts/nav')
+            ->view('layouts/sidebar')
             ->view('petugas/index')
+            ->view('layouts/footer');
+    }
+
+    public function edit($id)
+    {
+        $data = [
+            'title' => 'E-report | Edit Petugas',
+            'petugas' => $this->petugas->getPetugas($id)
+        ];
+        $this->load->view('layouts/header', $data)
+            ->view('layouts/nav')
+            ->view('layouts/sidebar')
+            ->view('petugas/edit')
             ->view('layouts/footer');
     }
 
@@ -33,8 +48,6 @@ class Petugas extends CI_Controller
         } else {
             $data = [
                 'title' => 'E-report | Tambah Petugas',
-                'pluginCSS' => [],
-                'pluginJS' => []
             ];
             $this->load->view('layouts/header', $data)
                 ->view('layouts/nav')
@@ -43,5 +56,12 @@ class Petugas extends CI_Controller
                 ->view('layouts/footer');
         }
     }
-    
+
+    public function delete($id)
+    {
+        $this->db->where('id', $id)->delete('petugas');
+        flashAlert('success', 'Berhasil Menghapus Data');
+        redirect('petugas');
+    }
+
 }

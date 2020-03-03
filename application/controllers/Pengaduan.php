@@ -6,7 +6,7 @@ class Pengaduan extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        isLogin();
+        isLogin('admin');
         $this->load->model('PengaduanModel', 'pengaduan');
     }
 

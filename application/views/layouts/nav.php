@@ -13,7 +13,8 @@
           <a href="<?= base_url('admin/profile') ?>" class="nav-link" href="#">Profile</a>
         </li>
         <li class="nav-item">
-          <a href="<?= base_url('auth/logout') ?>" class="nav-link" href="#">Logout</a>
+          <form action="<?= base_url('admin/logout') ?>" method="GET" class="d-none formLogout"></form>
+          <a class="nav-link btnLogout" href="#">Logout</a>
         </li>
       </ul>
     </div>

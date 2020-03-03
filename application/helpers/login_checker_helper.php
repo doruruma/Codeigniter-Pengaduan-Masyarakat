@@ -1,9 +1,9 @@
 <?php
 
-function isLogin()
+function isLogin($session)
 {
     $ci = get_instance();
-    if (!$ci->session->userdata('id')) {
+    if (!$ci->session->userdata($session)) {
         redirect('auth');
     }
 }

@@ -18,4 +18,7 @@ small{
 .nav-link:hover{
   color: slategray !important;
 }
+.radius{
+  border-radius: 15px;
+}
 /*  */

@@ -6,7 +6,7 @@ class Admin extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        isLogin();
+        isLogin('admin');
         $this->load->model('PetugasModel', 'petugas');
         $this->load->model('PengaduanModel', 'pengaduan');
     }
@@ -27,6 +27,12 @@ class Admin extends CI_Controller
             ->view('layouts/sidebar')
             ->view('admin/index')
             ->view('layouts/footer');
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('admin');
+        redirect('auth');
     }
 
 }

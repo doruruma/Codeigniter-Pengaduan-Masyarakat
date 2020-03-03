@@ -35,8 +35,8 @@
                     <td><?= $p->date ?></td>
                     <td class="d-inline-block text-truncate" style="max-width: 200px"><?= $p->laporan ?></td>
                     <td class="text-center">
-                      <a class="btn btn-sm btn-info my-1 font-weight-bold <?= $this->session->userdata('level') == 1 ? 'disabled' : '' ?>" href="<?= base_url('petugas/edit/' . $p->id) ?>"><i class="fas fa-sm fa-fw fa-search"></i></a>
-                      <a class="btn btn-sm btn-danger my-1 font-weight-bold" href="<?= base_url('petugas/delete/' . $p->id) ?>"><i class="fas fa-sm fa-fw fa-trash-alt"></i></a>
+                      <a class="btn btn-sm btn-info my-1 font-weight-bold <?= $this->session->userdata('admin')['level'] == 1 ? 'disabled' : '' ?>" href="<?= base_url('pengaduan/detail/' . $p->id) ?>"><i class="fas fa-sm fa-fw fa-search"></i></a>
+                      <a class="btn btn-sm btn-danger my-1 font-weight-bold" href="<?= base_url('pengduan/delete/' . $p->id) ?>"><i class="fas fa-sm fa-fw fa-trash-alt"></i></a>
                     </td>
                   </tr>
                   <?php $no++ ?>

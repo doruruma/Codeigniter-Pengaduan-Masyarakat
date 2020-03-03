@@ -40,4 +40,5 @@ class Auth extends CI_Controller
                 ->view('layouts/footer');
         }
     }
+
 }
