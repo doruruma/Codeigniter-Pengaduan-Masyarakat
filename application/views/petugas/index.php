@@ -14,7 +14,7 @@
     <div class="row justify-content-center">
 
       <div class="col-lg-12">
-        <a href="<?= base_url('petugas/tambah') ?>" class="btn btn-sm mb-2 btn-primary">Tambah Petugas</a>
+        <a href="<?= base_url('petugas/tambah') ?>" class="btn btn-sm mb-2 btn-primary <?= $this->session->userdata('user')['level'] ? 'disabled' : '' ?>">Tambah Petugas</a>
         <div class="card shadow-sm border-light">
           <div class="card-body">
             <table class="table">
@@ -34,8 +34,8 @@
                     <td><?= $p->username ?></td>
                     <td><?= $p->telp ?></td>
                     <td class="text-center">
-                      <a class="btn btn-sm btn-info my-1 font-weight-bold" href="<?= base_url('petugas/edit/' . $p->id) ?>"><i class="fas fa-sm fa-fw fa-pen"></i></a>
-                      <a class="btn btn-sm btn-danger my-1 font-weight-bold btnDelete" href="#" data-id="<?= $p->id ?>"><i class="fas fa-sm fa-fw fa-trash-alt"></i></a>
+                      <a class="btn btn-sm btn-info my-1 font-weight-bold <?= $this->session->userdata('user')['level'] == 2 ? 'disabled' : '' ?>" href="<?= base_url('petugas/edit/' . $p->id) ?>"><i class="fas fa-sm fa-fw fa-pen"></i></a>
+                      <a class="btn btn-sm btn-danger my-1 font-weight-bold btnDelete <?= $this->session->userdata('user')['level'] == 2 ? 'disabled' : '' ?>" href="#" data-id="<?= $p->id ?>"><i class="fas fa-sm fa-fw fa-trash-alt"></i></a>
                     </td>
                   </tr>
                   <?php $no++ ?>

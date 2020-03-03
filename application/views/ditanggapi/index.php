@@ -5,12 +5,12 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-white shadow-sm">
       <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>">Admin</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Data Pengaduan</li>
+      <li class="breadcrumb-item active" aria-current="page">Data Tanggapan Pengaduan</li>
     </ol>
   </nav>
 
   <div class="container" style="margin-top:40px; min-height:390px">
-    <div class="h3 text-muted mb-3">Data Pengaduan</div>
+    <div class="h3 text-muted mb-3">Data Tanggapan Pengaduan</div>
     <div class="row justify-content-center">
 
       <div class="col-lg-12">
@@ -21,22 +21,22 @@
                 <th>No</th>
                 <th>Nik</th>
                 <th>Pelapor</th>
-                <th>Tanggal</th>
+                <th>Tanggal Ditanggapi</th>
                 <th>Isi</th>
                 <th></th>
               </thead>
               <tbody>
                 <?php $no = 1 ?>
-                <?php foreach ($pengaduan as $p) : ?>
+                <?php foreach ($ditanggapi as $d) : ?>
                   <tr>
                     <td><?= $no ?></td>
-                    <td><?= $p->nik ?></td>
-                    <td class=""><?= $p->nama ?></td>
-                    <td><?= $p->date ?></td>
-                    <td class="d-inline-block text-truncate" style="max-width: 200px"><?= $p->laporan ?></td>
+                    <td><?= $d->nik ?></td>
+                    <td class=""><?= $d->nama ?></td>
+                    <td><?= $d->date ?></td>
+                    <td class="d-inline-block text-truncate" style="max-width: 200px"><?= $d->laporan ?></td>
                     <td class="text-center">
-                      <a class="btn btn-sm btn-info my-1 font-weight-bold <?= $this->session->userdata('user')['level'] == 1 ? 'disabled' : '' ?>" href="<?= base_url('pengaduan/detail/' . $p->id) ?>"><i class="fas fa-sm fa-fw fa-search"></i></a>
-                      <a class="btn btn-sm btn-danger my-1 font-weight-bold" href="<?= base_url('pengduan/delete/' . $p->id) ?>"><i class="fas fa-sm fa-fw fa-trash-alt"></i></a>
+                      <a class="btn btn-sm btn-info my-1 font-weight-bold <?= $this->session->userdata('user')['level'] == 1 ? 'disabled' : '' ?>" href="<?= base_url('ditanggapi/detail/' . $d->id) ?>"><i class="fas fa-sm fa-fw fa-search"></i></a>
+                      <a class="btn btn-sm btn-danger my-1 font-weight-bold" href="<?= base_url('ditanggapi/delete/' . $d->id) ?>"><i class="fas fa-sm fa-fw fa-trash-alt"></i></a>
                     </td>
                   </tr>
                   <?php $no++ ?>

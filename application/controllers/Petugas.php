@@ -29,15 +29,20 @@ class Petugas extends CI_Controller
 
     public function edit($id)
     {
-        $data = [
-            'title' => 'E-report | Edit Petugas',
-            'petugas' => $this->petugas->getPetugas($id)
-        ];
-        $this->load->view('layouts/header', $data)
-            ->view('layouts/nav')
-            ->view('layouts/sidebar')
-            ->view('petugas/edit')
-            ->view('layouts/footer');
+        $this->petugas->editValidation();
+        if ($this->form_validation->run()) {
+            $this->petugas->edit($id);
+        } else {
+            $data = [
+                'title' => 'E-report | Edit Petugas',
+                'petugas' => $this->petugas->getPetugas($id)
+            ];
+            $this->load->view('layouts/header', $data)
+                ->view('layouts/nav')
+                ->view('layouts/sidebar')
+                ->view('petugas/edit')
+                ->view('layouts/footer');
+        }
     }
 
     public function tambah()
@@ -63,5 +68,4 @@ class Petugas extends CI_Controller
         flashAlert('success', 'Berhasil Menghapus Data');
         redirect('petugas');
     }
-
 }

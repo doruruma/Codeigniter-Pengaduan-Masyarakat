@@ -1,9 +1,9 @@
 <?php
 
-function isLogin($session)
+function isLogin()
 {
     $ci = get_instance();
-    if (!$ci->session->userdata($session)) {
+    if (!$ci->session->userdata('user')) {
         redirect('auth');
     }
 }
@@ -11,8 +11,8 @@ function isLogin($session)
 function loggedIn()
 {
     $ci = get_instance();
-    $sessionLEVEL = $ci->session->userdata('level');
-    $sessionNIK = $ci->session->userdata('nik');
+    $sessionLEVEL = $ci->session->userdata('user')['level'];
+    $sessionNIK = $ci->session->userdata('user')['nik'];
     if ($sessionNIK) {
         redirect('masyarakat');
     } else if ($sessionLEVEL) {

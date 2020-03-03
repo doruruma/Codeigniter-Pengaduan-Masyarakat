@@ -4,7 +4,7 @@ function setSessionPetugas($id, $username, $level)
 {
     $ci = get_instance();
     $session = [
-        'admin' => [
+        'user' => [
             'id' => $id,
             'username' => $username,
             'level' => $level
@@ -17,7 +17,7 @@ function setSessionMasyarakat($id, $nik, $nama, $username)
 {
     $ci = get_instance();
     $session = [
-        'masyarakat' => [
+        'user' => [
             'id' => $id,
             'nik' => $nik,
             'nama' => $nama,

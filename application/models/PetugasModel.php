@@ -12,6 +12,13 @@ class PetugasModel extends CI_Model
             ->set_rules('telp', 'Telepon', 'required|integer|min_length[9]');
     }
 
+    public function editValidation()
+    {
+        $this->form_validation->set_rules('nama', 'Nama', 'required|trim')
+            ->set_rules('username', 'Username', 'required|trim')
+            ->set_rules('telp', 'Telepon', 'required|integer|min_length[9]');
+    }
+
     // Form Handler
     public function register()
     {
@@ -36,6 +43,17 @@ class PetugasModel extends CI_Model
         }
     }
 
+    public function edit($id)
+    {
+        $this->db->set([
+            'nama' => $this->input->post('nama', true),
+            'username' => $this->input->post('username', true),
+            'telp' => $this->input->post('telp', true)
+        ])->where('id', $id)->update('petugas');
+        flashAlert('success', 'Berhasil Update Data');
+        redirect('petugas');
+    }
+
     // API
     public function getAllPetugas()
     {
@@ -46,5 +64,4 @@ class PetugasModel extends CI_Model
     {
         return $this->db->get_where('petugas', ['id' => $id])->row();
     }
-
 }
