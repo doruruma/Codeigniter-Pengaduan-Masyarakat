@@ -14,7 +14,7 @@
     <div class="row justify-content-center">
 
       <div class="col-lg-12">
-        <a href="<?= base_url('petugas/tambah') ?>" class="btn btn-sm mb-2 btn-primary <?= $this->session->userdata('user')['level'] ? 'disabled' : '' ?>">Tambah Petugas</a>
+        <a href="<?= base_url('petugas/tambah') ?>" class="btn btn-sm mb-2 btn-primary <?= $this->session->userdata('user')['level'] == 2 ? 'disabled' : '' ?>">Tambah Petugas</a>
         <div class="card shadow-sm border-light">
           <div class="card-body">
             <table class="table">

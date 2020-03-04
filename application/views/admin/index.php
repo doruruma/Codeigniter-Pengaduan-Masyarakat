@@ -6,19 +6,7 @@
     <div class="h3 text-muted">Main Menu</div>
     <div class="row no-gutters">
 
-      <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
-        <div class="card radius bg-dark shadow-sm">
-          <div class="card-body text-white">
-            <div class="h5"><i class="fas fa-fw fa-file fa-lg"></i> Pengaduan</div>
-            <div class="h2 text-center">128</div>
-          </div>
-          <div class="card-footer border-dark">
-            <a href="<?= base_url('pengaduan') ?>" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
+      <!-- <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
         <div class="card radius bg-primary shadow-sm">
           <div class="card-body text-white">
             <div class="h5"><i class="fas fa-fw fa-user-tie fa-lg"></i> Petugas</div>
@@ -28,9 +16,49 @@
             <a href="<?= base_url('petugas') ?>" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
+        <div class="card radius shadow-sm">
+          <div class="row no-gutters" style="height:100px">
+            <div class="col-5 bg-primary text-center py-2 text-white">
+              <div class="h2 mt-4"><i class="fas fa-fw fa-user-tie fa-lg"></i></div>
+            </div>
+            <div class="col-7 py-2 text-muted text-center">
+              <div class="h5">Petugas</div>
+              <div class="h4 mt-3">12</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
+        <div class="card radius bg-dark shadow-sm">
+          <div class="card-body text-white">
+            <div class="h5"><i class="fas fa-fw fa-file fa-lg"></i> Pengaduan</div>
+            <div class="h2 text-center">128</div>
+          </div>
+          <div class="card-footer border-dark">
+            <a href="<?= base_url('pengaduan') ?>" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
+        <div class="card radius shadow-sm">
+          <div class="row no-gutters" style="height:100px">
+            <div class="col-5 bg-danger text-center py-2 text-white">
+              <div class="h2 mt-4"><i class="fas fa-fw fa-file fa-lg"></i></div>
+            </div>
+            <div class="col-7 py-2 text-muted text-center">
+              <div class="h5">Pengaduan</div>
+              <div class="h4 mt-3">982</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
         <div class="card radius bg-info shadow-sm">
           <div class="card-body text-white">
             <div class="h5"><i class="fas fa-fw fa-map fa-lg"></i> Ditanggapi</div>
@@ -40,9 +68,23 @@
             <a href="<?= base_url('pengaduan/ditanggapi') ?>" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
+        <div class="card radius shadow-sm">
+          <div class="row no-gutters" style="height:100px">
+            <div class="col-5 bg-secondary text-center py-2 text-white">
+              <div class="h2 mt-4"><i class="fas fa-fw fa-map fa-lg"></i></div>
+            </div>
+            <div class="col-7 py-2 text-muted text-center">
+              <div class="h5">Ditanggapi</div>
+              <div class="h4 mt-3">90</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
         <div class="card radius bg-success shadow-sm">
           <div class="card-body text-white">
             <div class="h5"><i class="fas fa-fw fa-users fa-lg"></i> Masyarakat</div>
@@ -52,10 +94,26 @@
             <a href="<?= base_url('masyarakat') ?>" class="btn btn-sm btn-outline-light font-weight-bold px-2">Selengkapnya</a>
           </div>
         </div>
+      </div> -->
+
+      <div class="col-lg-3 col-md-6 col-sm-6 px-1 py-1">
+        <div class="card radius shadow-sm">
+          <div class="row no-gutters" style="height:100px">
+            <div class="col-5 bg-info text-center py-2 text-white">
+              <div class="h2 mt-4"><i class="fas fa-fw fa-users fa-lg"></i></div>
+            </div>
+            <div class="col-7 py-2 text-muted text-center">
+              <div class="h5">Masyarakat</div>
+              <div class="h4 mt-3">9280</div>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
+
     <hr>
+
     <div class="h4 text-muted mt-4">Data Terbaru</div>
     <div class="row no-gutters">
 
