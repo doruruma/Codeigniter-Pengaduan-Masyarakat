@@ -31,8 +31,7 @@ class Admin extends CI_Controller
 
     public function logout()
     {
-        $this->session->unset_userdata('admin');
+        $this->session->unset_userdata('user');
         redirect('auth');
     }
-
 }

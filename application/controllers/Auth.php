@@ -13,30 +13,45 @@ class Auth extends CI_Controller
 
     public function index()
     {
-        $this->auth->validation();
+        $this->auth->registerMasyarakatValidation();
         if ($this->form_validation->run()) {
-            $this->auth->login();
+            $this->auth->register();
         } else {
             $data = [
-                'title' => 'E-report | Sign In Petugas',
+                'title' => 'E-report | Registrasi'
+            ];
+            $this->load->view('layouts/header', $data)
+                ->view('auth/register')
+                ->view('layouts/footer');
+        }
+    }
+
+    public function login()
+    {
+        $this->auth->validation();
+        if ($this->form_validation->run()) {
+            $this->auth->login('masyarakat');
+        } else {
+            $data = [
+                'title' => 'E-report | Sign In Pengguna'
             ];
             $this->load->view('layouts/header', $data)
                 ->view('auth/login')
                 ->view('layouts/footer');
         }
     }
-    
-    public function registerMasyarakat()
+
+    public function admin()
     {
-        $this->AuthModel->registerMasyarakatValidation();
+        $this->auth->validation();
         if ($this->form_validation->run()) {
-            $this->AuthModel->registerMasyarakat();
+            $this->auth->login('admin');
         } else {
             $data = [
-                'title' => 'E-report | Register Masyarakat'
+                'title' => 'E-report | Sign In Petugas',
             ];
             $this->load->view('layouts/header', $data)
-                ->view('auth/registerMasyarakat')
+                ->view('auth/admin')
                 ->view('layouts/footer');
         }
     }
