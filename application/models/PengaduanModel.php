@@ -10,11 +10,10 @@ class PengaduanModel extends CI_Model
             ->join('masyarakat', 'pengaduan.id_masyarakat = masyarakat.id')->get()->result();
     }
 
-    public function getAllDitanggapi()
+    public function getPengaduan($id)
     {
-        return $this->db->select('tanggapan.*, pengaduan.*, masyarakat.nama, masyarakat.nik')->from('tanggapan')
-            ->join('pengaduan', 'tanggapan.id_pengaduan = pengaduan.id')
-            ->join('masyarakat', 'pengaduan.id_masyarakat = masyarakat.id')->get()->result();
+        return $this->db->select('pengaduan.*, masyarakat.*')->from('pengaduan')->where('pengaduan.id', $id)
+            ->join('masyarakat', 'pengaduan.id_masyarakat = masyarakat.id')->get()->row();
     }
-    
+
 }

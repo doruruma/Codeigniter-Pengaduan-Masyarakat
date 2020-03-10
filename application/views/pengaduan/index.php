@@ -9,7 +9,7 @@
     </ol>
   </nav>
 
-  <div class="container" style="margin-top:40px; min-height:390px">
+  <div class="container-fluid" style="margin-top:40px; min-height:390px">
     <div class="h3 text-muted mb-3">Data Pengaduan</div>
     <div class="row justify-content-center">
 

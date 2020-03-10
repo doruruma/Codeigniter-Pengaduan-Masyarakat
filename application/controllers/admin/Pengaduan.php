@@ -27,4 +27,18 @@ class Pengaduan extends CI_Controller
             ->view('layouts/footer');
     }
 
+    public function detail($id)
+    {
+        $data = [
+            'title' => 'E-report | Daftar Pengaduan',
+            'pageJS' => 'pengaduan/detail.js',
+
+            'pengaduan' => $this->pengaduan->getPengaduan($id)
+        ];
+        $this->load->view('layouts/header', $data)
+            ->view('layouts/nav')
+            ->view('layouts/sidebar')
+            ->view('pengaduan/detail')
+            ->view('layouts/footer');
+    }
 }
