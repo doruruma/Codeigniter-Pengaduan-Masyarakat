@@ -20,21 +20,27 @@ class AuthModel extends CI_Model
     }
 
     // Form Handler
-    public function login($table)
+    public function login()
     {
         $username = $this->input->post('username', true);
         $password = $this->input->post('password', true);
-        $data = $this->db->get_where($table, ['username' => $username])->row();
+        $data = $this->db->get_where('masyarakat', ['username' => $username])->row();
         if ($data) {
             if (password_verify($password, $data->password)) {
-                isset($data->nik) ? setSessionMasyarakat($data) && redirect('masyarakat') : (isset($data->id_level) ? setSessionPetugas($data) && redirect('admin') : '');
+                $session = [
+                    'id' => $data->id,
+                    'nik' => $data->nik,
+                    'nama' => $data->nama,
+                ];
+                setSession($session);
+                redirect('public');
             } else {
                 flashAlert('error', 'Username atau Password Tidak Valid');
-                redirect('auth');
+                redirect('auth/login');
             }
         } else {
             flashAlert('error', 'Username atau Password Tidak Valid');
-            redirect('auth');
+            redirect('auth/login');
         }
     }
 
@@ -46,19 +52,39 @@ class AuthModel extends CI_Model
         $password = $this->input->post('password', true);
         $finalPassword = password_hash($password, PASSWORD_DEFAULT);
         $telp = $this->input->post('telp', true);
-        try {
-            $this->db->insert('masyarakat', [
-                'nik' => $nik,
-                'nama' => $nama,
-                'username' => $username,
-                'password' => $finalPassword,
-                'telp' => $telp,
-            ]);
-            flashAlert('success', 'Berhasil Register Akun, Silahkan Login');
-            redirect('auth/login');
-        } catch (Exception $e) {
-            flashAlert('error', $e->getMessage());
-            redirect('auth');
+        $this->db->insert('masyarakat', [
+            'nik' => $nik,
+            'nama' => $nama,
+            'username' => $username,
+            'password' => $finalPassword,
+            'telp' => $telp,
+        ]);
+        flashAlert('success', 'Berhasil Register Akun, Silahkan Login');
+        redirect('auth/login');
+    }
+
+    public function loginAdmin()
+    {
+        $username = $this->input->post('username', true);
+        $password = $this->input->post('password', true);
+        $data = $this->db->get_where('petugas', ['username' => $username])->row();
+        if ($data) {
+            if (password_verify($password, $data->password)) {
+                $session = [
+                    'id' => $data->id,
+                    'username' => $data->username,
+                    'level' => $data->id_level,
+                ];
+                setSession($session);
+                redirect('admin/dashboard');
+            } else {
+                flashAlert('error', 'Username atau Password Tidak Valid');
+                redirect('admin/auth');
+            }
+        } else {
+            flashAlert('error', 'Username atau Password Tidak Valid');
+            redirect('admin/auth');
         }
     }
+    
 }

@@ -9,11 +9,17 @@
         <li class="nav-item nav-dashboard">
           <a href="<?= base_url('admin') ?>" class="nav-link">Dashboard</a>
         </li>
-        <li class="nav-item nav-profile">
-          <a href="<?= base_url('admin/profile') ?>" class="nav-link" href="#">Profile</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Profile
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<?= base_url('admin/profile/edit_profile') ?>">Edit Profile</a>
+            <a class="dropdown-item" href="<?= base_url('admin/profile/change_password') ?>">Change Password</a>
+          </div>
         </li>
         <li class="nav-item">
-          <form action="<?= base_url('admin/logout') ?>" method="GET" class="d-none formLogout"></form>
+          <form action="<?= base_url('admin/dashboard/logout') ?>" method="GET" class="d-none formLogout"></form>
           <a class="nav-link btnLogout" href="#">Logout</a>
         </li>
       </ul>

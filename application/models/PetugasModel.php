@@ -64,4 +64,5 @@ class PetugasModel extends CI_Model
     {
         return $this->db->get_where('petugas', ['id' => $id])->row();
     }
+    
 }

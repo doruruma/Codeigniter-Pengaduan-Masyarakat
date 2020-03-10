@@ -5,14 +5,15 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-white shadow-sm">
       <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>">Admin</a></li>
+      <li class="breadcrumb-item"><a href="<?= base_url('admin/petugas') ?>">Petugas</a></li>
       <li class="breadcrumb-item active" aria-current="page">Tambah Petugas</li>
     </ol>
   </nav>
 
-  <div class="container" style="margin-top:40px">
+  <div class="container-fluid" style="margin-top:40px">
     <div class="row justify-content-center">
 
-      <div class="col-lg-11 col-md-6 col-sm-12">
+      <div class="col-12">
         <div class="h4 text-muted mb-3">TAMBAH PETUGAS</div>
         <div class="card shadow-sm border-light">
           <div class="card-body">

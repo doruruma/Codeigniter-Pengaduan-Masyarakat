@@ -1,12 +1,12 @@
 <?php
 
-class Admin extends CI_Controller
+class Dashboard extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
-        isLogin();
+        isLoginAdmin();
         $this->load->model('PetugasModel', 'petugas');
         $this->load->model('PengaduanModel', 'pengaduan');
     }
@@ -25,13 +25,14 @@ class Admin extends CI_Controller
         $this->load->view('layouts/header', $data)
             ->view('layouts/nav')
             ->view('layouts/sidebar')
-            ->view('admin/index')
+            ->view('dashboard/index')
             ->view('layouts/footer');
     }
 
     public function logout()
     {
         $this->session->unset_userdata('user');
-        redirect('auth');
+        redirect('admin/auth');
     }
+
 }

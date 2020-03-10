@@ -1,21 +1,26 @@
 <?php
 
-function isLogin()
+
+function isLoginAdmin()
 {
     $ci = get_instance();
-    if (!$ci->session->userdata('user')) {
-        redirect('auth');
+    if (!isset($ci->session->user['level'])) {
+        redirect('admin/auth');
     }
 }
 
-function loggedIn()
+function isLoginPublic()
 {
     $ci = get_instance();
-    $sessionLEVEL = $ci->session->userdata('user')['level'];
-    $sessionNIK = $ci->session->userdata('user')['nik'];
-    if ($sessionNIK) {
-        redirect('masyarakat');
-    } else if ($sessionLEVEL) {
-        redirect('admin');
+    if (!isset($ci->session->user['nik'])) {
+        redirect('auth/login');
+    }
+}
+
+function loggedIn($redirect)
+{
+    $ci = get_instance();
+    if ($ci->session->user) {
+        redirect($redirect);
     }
 }

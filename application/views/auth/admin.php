@@ -4,8 +4,8 @@
   <div class="row justify-content-center">
     
     <div class="col-lg-5 col-md-6 col-sm-12">
-      <div class="h4 text-center text-muted mb-3">Sign In Admin</div>
-      <div class="card shadow-sm">
+      <div class="h4 text-center text-muted mb-3">E-Report | Sign In Admin</div>
+      <div class="card shadow-sm border-light">
         <div class="card-body">
           <form action="" method="POST">
 

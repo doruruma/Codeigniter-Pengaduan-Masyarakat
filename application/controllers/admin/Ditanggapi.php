@@ -6,6 +6,7 @@ class Ditanggapi extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        isLoginAdmin();
         $this->load->model('PengaduanModel', 'pengaduan');
     }
 
@@ -13,7 +14,7 @@ class Ditanggapi extends CI_Controller
     {
         $data = [
             'title' => 'E-report | Pengaduan Ditanggapi',
-            'pageJS' => 'pengaduan/ditanggapi.js',
+            'pageJS' => 'ditanggapi/index.js',
             'pluginCSS' => ['datatables/dataTables.bootstrap4.min.css'],
             'pluginJS' => ['datatables/jquery.dataTables.js', 'datatables/dataTables.bootstrap4.min.js'],
 

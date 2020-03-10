@@ -6,7 +6,7 @@ class Petugas extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        isLogin('admin');
+        isLoginAdmin();
         $this->load->model('PetugasModel', 'petugas');
     }
 

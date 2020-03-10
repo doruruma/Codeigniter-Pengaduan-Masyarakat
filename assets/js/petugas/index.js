@@ -10,7 +10,7 @@ $(document).ready(function () {
       type: 'question',
       showCancelButton: true
     }).then((res) => {
-      res.value ? document.location.href = localStorage.getItem('url') + 'petugas/delete/' + id : console.log(id)
+      res.value ? document.location.href = localStorage.getItem('url') + 'admin/petugas/delete/' + id : console.log(id)
     })
   })
 
