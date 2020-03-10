@@ -7,7 +7,7 @@ class Ditanggapi extends CI_Controller
     {
         parent::__construct();
         isLoginAdmin();
-        $this->load->model('PengaduanModel', 'pengaduan');
+        $this->load->model('DitanggapiModel', 'ditanggapi');
     }
 
     public function index()
@@ -18,7 +18,7 @@ class Ditanggapi extends CI_Controller
             'pluginCSS' => ['datatables/dataTables.bootstrap4.min.css'],
             'pluginJS' => ['datatables/jquery.dataTables.js', 'datatables/dataTables.bootstrap4.min.js'],
 
-            'ditanggapi' => $this->pengaduan->getAllDitanggapi()
+            'ditanggapi' => $this->ditanggapi->getAllTanggapan()
         ];
         $this->load->view('layouts/header', $data)
             ->view('layouts/nav')
@@ -33,7 +33,7 @@ class Ditanggapi extends CI_Controller
             'title' => 'E-report | Pengaduan Ditanggapi',
             'pageJS' => 'pengaduan/detail.js',
 
-            'ditanggapi' => $this->pengaduan->getDitanggapi($id)
+            'ditanggapi' => $this->ditanggapi->getTanggapan($id)
         ];
         $this->load->view('layouts/header', $data)
             ->view('layouts/nav')

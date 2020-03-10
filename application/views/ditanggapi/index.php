@@ -35,8 +35,8 @@
                     <td><?= $d->date ?></td>
                     <td class="d-inline-block text-truncate" style="max-width: 200px"><?= $d->laporan ?></td>
                     <td class="text-center">
-                      <a class="btn btn-sm btn-info my-1 font-weight-bold <?= $this->session->userdata('user')['level'] == 1 ? 'disabled' : '' ?>" href="<?= base_url('ditanggapi/detail/' . $d->id) ?>"><i class="fas fa-sm fa-fw fa-search"></i></a>
-                      <a class="btn btn-sm btn-danger my-1 font-weight-bold" href="<?= base_url('ditanggapi/delete/' . $d->id) ?>"><i class="fas fa-sm fa-fw fa-trash-alt"></i></a>
+                      <a class="btn btn-sm btn-info my-1 font-weight-bold" href="<?= base_url('admin/ditanggapi/detail/' . $d->id) ?>"><i class="fas fa-sm fa-fw fa-search"></i></a>
+                      <a class="btn btn-sm btn-danger my-1 font-weight-bold btnDelete <?= $this->session->user['level'] == 2 ? 'disabled' : '' ?>" href="#"><i class="fas fa-sm fa-fw fa-trash-alt"></i></a>
                     </td>
                   </tr>
                   <?php $no++ ?>
