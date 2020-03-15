@@ -7,7 +7,6 @@ class Profile extends CI_Controller
     {
         parent::__construct();
         isLoginAdmin();
-        $this->load->model('PetugasModel', 'petugas');
         $this->load->model('PengaduanModel', 'pengaduan');
         $this->load->model('AdminModel', 'admin');
     }
@@ -15,8 +14,8 @@ class Profile extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'E-report | Admin',
-            'petugas' => $this->petugas->getPetugas($this->session->petugas['id'])
+            'title' => 'E-report | Profile Admin',
+            'petugas' => $this->admin->getAdmin($this->session->user['id'])
         ];
         $this->load->view('layouts/header', $data)
             ->view('layouts/nav')

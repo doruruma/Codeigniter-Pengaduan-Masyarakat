@@ -5,6 +5,7 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb bg-white shadow-sm">
       <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>">Admin</a></li>
+      <li class="breadcrumb-item"><a href="<?= base_url('admin/profile') ?>">Profile</a></li>
       <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
     </ol>
   </nav>
@@ -69,7 +70,7 @@
             </form>
           </div>
           <div class="card-footer bg-white radius">
-            <a href="<?= base_url('admin/profile/change_password') ?>" class="nav-link font-weight-bold">Change Password</a>
+            <a href="<?= base_url('admin/profile/change_password') ?>" class="mx-2 font-weight-bold">Ubah Password</a>
           </div>
         </div>
       </div>

@@ -51,7 +51,7 @@
             </form>
           </div>
           <div class="card-footer bg-white radius">
-            <a href="<?= base_url('admin/profile/edit_profile') ?>" class="nav-link font-weight-bold">Edit Profile</a>
+            <a href="<?= base_url('admin/profile/edit_profile') ?>" class="mx-2 font-weight-bold">Edit Profile</a>
           </div>
         </div>
       </div>

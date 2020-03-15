@@ -17,31 +17,33 @@
         <a href="<?= base_url('admin/petugas/tambah') ?>" class="btn btn-sm mb-2 btn-primary <?= $this->session->userdata('user')['level'] == 2 ? 'disabled' : '' ?>">Tambah Petugas</a>
         <div class="card shadow-sm border-light">
           <div class="card-body">
-            <table class="table">
-              <thead>
-                <th>No</th>
-                <th>Nama</th>
-                <th>Username</th>
-                <th>Telepon</th>
-                <th></th>
-              </thead>
-              <tbody>
-                <?php $no = 1 ?>
-                <?php foreach ($petugas as $p) : ?>
-                  <tr>
-                    <td><?= $no ?></td>
-                    <td><?= $p->nama ?></td>
-                    <td><?= $p->username ?></td>
-                    <td><?= $p->telp ?></td>
-                    <td class="text-center">
-                      <a class="btn btn-sm btn-info my-1 font-weight-bold <?= $this->session->user['level'] == 2 ? 'disabled' : '' ?>" href="<?= base_url('admin/petugas/edit/' . $p->id) ?>"><i class="fas fa-sm fa-fw fa-pen"></i></a>
-                      <a class="btn btn-sm btn-danger my-1 font-weight-bold btnDelete <?= $this->session->user['level'] == 2 ? 'disabled' : '' ?>" href="#" data-id="<?= $p->id ?>"><i class="fas fa-sm fa-fw fa-trash-alt"></i></a>
-                    </td>
-                  </tr>
-                  <?php $no++ ?>
-                <?php endforeach ?>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <th>No</th>
+                  <th>Nama</th>
+                  <th>Username</th>
+                  <th>Telepon</th>
+                  <th></th>
+                </thead>
+                <tbody>
+                  <?php $no = 1 ?>
+                  <?php foreach ($petugas as $p) : ?>
+                    <tr>
+                      <td><?= $no ?></td>
+                      <td><?= $p->nama ?></td>
+                      <td><?= $p->username ?></td>
+                      <td><?= $p->telp ?></td>
+                      <td class="text-center">
+                        <a class="btn btn-sm btn-info my-1 font-weight-bold <?= $this->session->user['level'] == 2 ? 'disabled' : '' ?>" href="<?= base_url('admin/petugas/edit/' . $p->id) ?>"><i class="fas fa-sm fa-fw fa-pen"></i></a>
+                        <a class="btn btn-sm btn-danger my-1 font-weight-bold btnDelete <?= $this->session->user['level'] == 2 ? 'disabled' : '' ?>" href="#" data-id="<?= $p->id ?>"><i class="fas fa-sm fa-fw fa-trash-alt"></i></a>
+                      </td>
+                    </tr>
+                    <?php $no++ ?>
+                  <?php endforeach ?>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
