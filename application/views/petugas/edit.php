@@ -10,10 +10,10 @@
     </ol>
   </nav>
 
-  <div class="container" style="margin-top:40px; min-height:400px">
+  <div class="container-fluid" style="margin-top:40px; min-height:400px">
     <div class="row justify-content-center">
 
-      <div class="col-lg-11 col-md-6 col-sm-12">
+      <div class="col-12">
         <div class="h4 text-muted mb-3">EDIT PETUGAS</div>
         <div class="card shadow-sm border-light">
           <div class="card-body">

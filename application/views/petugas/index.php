@@ -9,16 +9,16 @@
     </ol>
   </nav>
 
-  <div class="container" style="margin-top:40px; min-height:390px">
+  <div class="container-fluid" style="margin-top:40px; min-height:390px">
     <div class="h3 text-muted mb-2">Data Petugas</div>
-    <div class="row justify-content-center">
+    <div class="row">
 
-      <div class="col-lg-12">
+      <div class="col-12">
         <a href="<?= base_url('admin/petugas/tambah') ?>" class="btn btn-sm mb-2 btn-primary <?= $this->session->userdata('user')['level'] == 2 ? 'disabled' : '' ?>">Tambah Petugas</a>
         <div class="card shadow-sm border-light">
           <div class="card-body">
             <table class="table">
-              <thead class="thead-light">
+              <thead>
                 <th>No</th>
                 <th>Nama</th>
                 <th>Username</th>
