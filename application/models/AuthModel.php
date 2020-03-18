@@ -12,9 +12,9 @@ class AuthModel extends CI_Model
 
     public function registerMasyarakatValidation()
     {
-        $this->form_validation->set_rules('nik', 'NIK', 'required|trim')
+        $this->form_validation->set_rules('nik', 'NIK', 'required|trim|is_unique[masyarakat.nik]')
             ->set_rules('nama', 'Nama', 'required|trim')
-            ->set_rules('username', 'Username', 'required|trim')
+            ->set_rules('username', 'Username', 'required|trim|is_unique[masyarakat.username]')
             ->set_rules('password', 'Password', 'required|min_length[5]')
             ->set_rules('telp', 'Telepon', 'required|integer|min_length[9]');
     }
@@ -31,9 +31,10 @@ class AuthModel extends CI_Model
                     'id' => $data->id,
                     'nik' => $data->nik,
                     'nama' => $data->nama,
+                    'username' => $data->username
                 ];
                 setSession($session);
-                redirect('public');
+                redirect('user/home');
             } else {
                 flashAlert('error', 'Username atau Password Tidak Valid');
                 redirect('auth/login');

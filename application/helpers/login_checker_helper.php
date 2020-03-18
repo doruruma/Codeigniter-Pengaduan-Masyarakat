@@ -17,10 +17,18 @@ function isLoginPublic()
     }
 }
 
-function loggedIn($redirect)
+function loggedInPublic()
 {
     $ci = get_instance();
-    if ($ci->session->user) {
-        redirect($redirect);
+    if (isset($ci->session->user)) {
+        redirect('user/home');
+    }
+}
+
+function loggedInAdmin()
+{
+    $ci = get_instance();
+    if (isset($ci->session->user['level'])) {
+        redirect('admin/dashboard');
     }
 }

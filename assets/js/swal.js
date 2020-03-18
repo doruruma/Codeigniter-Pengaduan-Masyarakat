@@ -12,7 +12,7 @@ $(document).ready(function () {
     })
   }
 
-  $('.btnLogout').click(function (e) {
+  $('.btnLogoutAdmin').click(function (e) {
     e.preventDefault()
     Swal.fire({
       title: "Konfirmasi Logout",
@@ -20,7 +20,19 @@ $(document).ready(function () {
       type: 'question',
       showCancelButton: true
     }).then((res) => {
-      res.value ? $('.formLogout').submit() : console.log('')
+      res.value ? $('.formLogoutAdmin').submit() : false
+    })
+  })
+
+  $('.btnLogoutUser').click(function (e) {
+    e.preventDefault()
+    Swal.fire({
+      title: "Konfirmasi Logout",
+      text: 'Yakin Ingin Logout?',
+      type: 'question',
+      showCancelButton: true
+    }).then((res) => {
+      res.value ? $('.formLogoutUser').submit() : false
     })
   })
 
