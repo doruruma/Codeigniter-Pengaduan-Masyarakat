@@ -7,6 +7,7 @@ class Home extends CI_Controller
     {
         parent::__construct();
         isLoginPublic();
+        $this->load->model('PengaduanModel', 'pengaduan');
     }
 
     public function index()

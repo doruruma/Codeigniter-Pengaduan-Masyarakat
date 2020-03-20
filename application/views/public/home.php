@@ -7,7 +7,7 @@
     <p class="lead">Aplikasi Ini Memudahkan Pelaporan</p>
     <hr class="my-4">
     <p>Click Tombol Dibawah Untuk Membuat Pengaduan</p>
-    <a class="btn btn-primary btn" href="#" role="button">Buat Pengaduan</a>
+    <a class="btn btn-primary btn" href="<?= base_url('user/pengaduan') ?>" role="button">Buat Pengaduan</a>
   </div>
 
   <hr>

@@ -20,7 +20,7 @@ function isLoginPublic()
 function loggedInPublic()
 {
     $ci = get_instance();
-    if (isset($ci->session->user)) {
+    if (isset($ci->session->user['nik'])) {
         redirect('user/home');
     }
 }

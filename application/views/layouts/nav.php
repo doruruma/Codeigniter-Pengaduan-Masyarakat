@@ -27,10 +27,10 @@
       <?php if (isset($this->session->user['nik'])) : ?>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item nav-dashboard">
-            <a href="<?= base_url('admin') ?>" class="nav-link">Pengaduan Saya</a>
+            <a href="<?= base_url('user/pengaduan/histori') ?>" class="nav-link">Pengaduan Saya</a>
           </li>
           <li class="nav-item nav-profile">
-            <a href="<?= base_url('admin/profile') ?>" class="nav-link">Profile</a>
+            <a href="<?= base_url('user/profile') ?>" class="nav-link">Profile</a>
           </li>
           <li class="nav-item">
             <form action="<?= base_url('user/home/logout') ?>" method="GET" class="d-none formLogoutUser"></form>
