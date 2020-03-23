@@ -34,7 +34,7 @@ class AuthModel extends CI_Model
                     'username' => $data->username
                 ];
                 setSession($session);
-                redirect('user/home');
+                redirect('public/home');
             } else {
                 flashAlert('error', 'Username atau Password Tidak Valid');
                 redirect('auth/login');

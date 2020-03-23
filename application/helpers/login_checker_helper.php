@@ -21,7 +21,7 @@ function loggedInPublic()
 {
     $ci = get_instance();
     if (isset($ci->session->user['nik'])) {
-        redirect('user/home');
+        redirect('public/home');
     }
 }
 

@@ -3,6 +3,12 @@
 class PengaduanModel extends CI_Model
 {
 
+    // Form Validation
+    public function validation()
+    {
+        $this->form_validation->set_rules('');
+    }
+
     // API
     public function getAllPengaduan()
     {

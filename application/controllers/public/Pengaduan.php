@@ -13,6 +13,7 @@ class Pengaduan extends CI_Controller
     {
         $data = [
             'title' => 'E-report | Membuat Pengaduan',
+            'pageJS' => 'public/tambahPengaduan.js'
         ];
         $this->load->view('layouts/header', $data)
             ->view('layouts/nav')
