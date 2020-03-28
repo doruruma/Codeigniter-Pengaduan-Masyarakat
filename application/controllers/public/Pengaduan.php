@@ -11,14 +11,19 @@ class Pengaduan extends CI_Controller
 
     public function index()
     {
-        $data = [
-            'title' => 'E-report | Membuat Pengaduan',
-            'pageJS' => 'public/tambahPengaduan.js'
-        ];
-        $this->load->view('layouts/header', $data)
-            ->view('layouts/nav')
-            ->view('public/tambahPengaduan')
-            ->view('layouts/footer');
+        $this->pengaduan->validation();
+        if ($this->form_validation->run()) { 
+            $this->pengaduan->insert();
+        } else {
+            $data = [
+                'title' => 'E-report | Membuat Pengaduan',
+                'pageJS' => 'public/tambahPengaduan.js'
+            ];
+            $this->load->view('layouts/header', $data)
+                ->view('layouts/nav')
+                ->view('public/tambahPengaduan')
+                ->view('layouts/footer');
+        }
     }
 
     public function histori()
@@ -32,5 +37,4 @@ class Pengaduan extends CI_Controller
             ->view('public/historiPengaduan')
             ->view('layouts/footer');
     }
-
 }

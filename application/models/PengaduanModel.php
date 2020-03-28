@@ -6,8 +6,22 @@ class PengaduanModel extends CI_Model
     // Form Validation
     public function validation()
     {
-        $this->form_validation->set_rules('');
+        $this->form_validation->set_rules('tempat', 'Tempat', 'required')
+            ->set_rules('date', 'Tanggal', 'required')
+            ->set_rules('aduan', 'Aduan', 'required|trim|min_length[10]');
     }
+
+
+    // Form Handler
+    public function insert()
+    {
+        $aduan = $this->input->post('aduan');
+        $date = $this->input->post('date');
+        $tempat = $this->input->post('tempat');
+        $img = $_FILES['img1']['name'];
+        if ($img) { }
+    }
+
 
     // API
     public function getAllPengaduan()
@@ -28,5 +42,4 @@ class PengaduanModel extends CI_Model
             ->join('status', 'pengaduan.id_status = status.id')
             ->get()->result();
     }
-    
 }

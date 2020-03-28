@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
-  for (let i = 1; i < 5; i++) {
-    $('#img' + i).change(function () {
-      const fileName = $(this).val().split('\\').pop()
-      $(this).next('.custom-file-label').addClass('selected').html(fileName)
-      $('.img' + i).attr('src', window.URL.createObjectURL(this.files[0]))
-    })
-  }
+  $('#img').change(function () {
+    $('.imgPreview').empty()
+    for (let i = 0; i < this.files.length; i++) {
+      $('.imgPreview').append("<img src='' class='img-thumbnail py-1 px-1 img" + i + "' style='max-width:50%; height:auto'></img>")
+      $('.img' + i).attr('src', window.URL.createObjectURL(this.files[i]))
+    }
+  })
 
 })

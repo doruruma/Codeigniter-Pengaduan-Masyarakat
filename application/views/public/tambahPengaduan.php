@@ -9,49 +9,24 @@
 
 <div class="container-fluid">
 
-  <div class="h2 text-muted mt-4">Ajukan Pengaduan</div>
-
   <div class="row no-gutters justify-content-center">
 
-    <div class="col-lg-6 col-12 px-1 py-1">
+    <div class="col-lg-7 col-12 px-1 py-1">
       <div class="card shadow-sm mt-3">
         <div class="card-header radius">
-          Form
+          Harap Isi Form Pengaduan Dibawah
         </div>
         <div class="card-body">
           <form action="" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
-              <label for="img1">Sisipkan Gambar</label>
-              <div class="input-group">
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="img1" aria-describedby="inputGroupFileAddon01">
-                  <label class="custom-file-label" for="img1">Pilih Gambar 1</label>
-                </div>
-                <div class="input-group-append">
-                  <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseImg2"><i class="fas fa-fw fa-plus"></i></button>
-                </div>
-              </div>
-              <small><button class="btn btn-sm btn-link" type="button" data-toggle="collapse" data-target=".collapse">Show All</button></small>
+              <label for="img">Sisipkan Gambar</label>
+              <input type="file" name="img[]" id="img" class="d-block" multiple>
             </div>
 
-            <?php for ($i = 2; $i < 5; $i++) : ?>
-              <div class="collapse" id="collapseImg<?= $i ?>">
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="img<?= $i ?>" aria-describedby="inputGroupFileAddon01">
-                      <label class="custom-file-label" for="img<?= $i ?>">Pilih Gambar <?= $i ?></label>
-                    </div>
-                    <?php if ($i < 4) : ?>
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#collapseImg<?= $i + 1 ?>"><i class="fas fa-fw fa-plus"></i></button>
-                      </div>
-                    <?php endif ?>
-                  </div>
-                </div>
-              </div>
-            <?php endfor ?>
+            <div class="imgPreview text-center">
+
+            </div>
 
             <hr>
 
@@ -80,22 +55,6 @@
             </div>
 
           </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6 px-1 py-1">
-      <div class="card shadow-sm mt-3">
-        <div class="card-header radius">
-          Preview Gambar
-        </div>
-        <div class="card-body text-center">
-          <!-- <div class="row justify-content-center no-gutters"> -->
-            <img src="<?= base_url('assets/img/img_preview.png') ?>" class=" py-1 px-1 img1" style="width:40%">
-            <img src="<?= base_url('assets/img/img_preview.png') ?>" class=" py-1 px-1 img2" style="width:40%">
-            <img src="<?= base_url('assets/img/img_preview.png') ?>" class=" py-1 px-1 img3" style="width:40%">
-            <img src="<?= base_url('assets/img/img_preview.png') ?>" class=" py-1 px-1 img4" style="width:40%">
-          <!-- </div> -->
         </div>
       </div>
     </div>
