@@ -20,8 +20,8 @@
           <form action="" method="post" enctype="multipart/form-data">
 
             <div class="form-group">
-              <label for="img">Sisipkan Gambar</label>
-              <input type="file" name="img[]" id="img" class="d-block" multiple>
+              <label for="images">Sisipkan Gambar</label>
+              <input type="file" name="images[]" id="images" class="d-block" multiple>
             </div>
 
             <div class="imgPreview text-center">
@@ -33,6 +33,7 @@
             <div class="form-group">
               <label for="tempat">Tempat</label>
               <input type="text" name="tempat" id="tempat" class="form-control">
+              <small class="text-danger"><?= form_error('tempat') ?></small>
             </div>
 
             <div class="form-group">

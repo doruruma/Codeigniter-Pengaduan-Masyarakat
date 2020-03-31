@@ -18,8 +18,45 @@ class PengaduanModel extends CI_Model
         $aduan = $this->input->post('aduan');
         $date = $this->input->post('date');
         $tempat = $this->input->post('tempat');
-        $img = $_FILES['img1']['name'];
-        if ($img) { }
+        $data = [
+            'id_masyarakat' => $this->session->user['id'],
+            'date' => $date,
+            'laporan' => $aduan,
+            'tempat' => $tempat,
+            'date_created' => date('d-m-y'),
+            'id_status' => 0
+        ];
+        $this->db->insert('pengaduan', $data);
+        $id_pengaduan = $this->db->insert_id();
+
+        $imgCount = count($_FILES['images']['name']);
+        for ($i = 0; $i < $imgCount; $i++) {
+            if (!empty($_FILES['images']['name'][$i])) {
+                // new var
+                $_FILES['img']['name'] = $_FILES['images']['name'][$i];
+                $_FILES['img']['type'] = $_FILES['images']['type'][$i];
+                $_FILES['img']['tmp_name'] = $_FILES['images']['tmp_name'][$i];
+                $_FILES['img']['error'] = $_FILES['images']['error'][$i];
+                $_FILES['img']['size'] = $_FILES['images']['size'][$i];
+                // config
+                $config = [
+                    'upload_path' => './assets/img/pengaduan/',
+                    'allowed_types' => 'jpg|jpeg|png',
+                    'max_size' => '6000',
+                    'encrypt_name' => true
+                ];
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload('img')) {
+                    $imgName = $this->upload->data('file_name');
+                    $this->db->insert('img', ['id_pengaduan' => $id_pengaduan, 'img' => $imgName]);
+                } else { 
+                    flashAlert('error', $this->upload->display_errors());
+                    redirect('public/pengaduan');
+                }
+            }
+        }
+        flashAlert('success', 'Berhasil Input Pengaduan');
+        redirect('public/pengaduan');
     }
 
 
