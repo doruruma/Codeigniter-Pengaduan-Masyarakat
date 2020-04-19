@@ -33,7 +33,8 @@ class Pengaduan extends CI_Controller
             'title' => 'E-report | Daftar Pengaduan',
             'pageJS' => 'pengaduan/detail.js',
 
-            'pengaduan' => $this->pengaduan->getPengaduan($id)
+            'pengaduan' => $this->pengaduan->getPengaduan($id),
+            'img' => $this->pengaduan->getPengaduanImg($id)
         ];
         $this->load->view('layouts/header', $data)
             ->view('layouts/nav')

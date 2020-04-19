@@ -13,7 +13,7 @@ class Pengaduan extends CI_Controller
     public function index()
     {
         $this->pengaduan->validation();
-        if ($this->form_validation->run()) { 
+        if ($this->form_validation->run()) {
             $this->pengaduan->insert();
         } else {
             $data = [
@@ -27,6 +27,17 @@ class Pengaduan extends CI_Controller
         }
     }
 
+    public function detail()
+    {
+        if (!isset($_GET['id'])) {
+            redirect('/public/home');
+        }
+        $this->load->view('layouts/header', $data)
+            ->load->view('layouts/nav')
+            ->load->view('public/detail')
+            ->load->view('layouts/footer');
+    }
+
     public function histori()
     {
         $data = [
@@ -38,4 +49,5 @@ class Pengaduan extends CI_Controller
             ->view('public/historiPengaduan')
             ->view('layouts/footer');
     }
+    
 }

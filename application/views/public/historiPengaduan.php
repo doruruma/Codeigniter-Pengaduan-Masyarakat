@@ -28,7 +28,7 @@
           </div>
           <div class="card-footer radius text-muted">
             <b><?= $p->status ?></b>
-            <b><a href="<?= base_url('public/pengaduan/detail/' . $p->id) ?>" class="float-right"><i class="fas fa-fw fa-eye"></i> lihat</a></b>
+            <b><a href="<?= base_url('public/pengaduan/detail?id=' . $p->id) ?>" class="float-right"><i class="fas fa-fw fa-eye"></i> lihat</a></b>
           </div>
         </div>
       </div>

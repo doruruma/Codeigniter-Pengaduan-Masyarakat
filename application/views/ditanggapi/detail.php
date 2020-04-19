@@ -116,6 +116,13 @@
         <div class="card shadow-sm border-light mt-3">
           <div class="card-body">
             <div class="h5 text-muted">Gambar</div>
+            <div class="row no-gutters">
+              <?php foreach ($img as $img) : ?>
+                <div class="col-lg-3 col-md-6 col-sm-12 py-1 px-1">
+                  <img src="<?= base_url('assets/img/pengaduan/' . $img->img) ?>" alt="" width="250" style="height:200px" class="img-thumbnail">
+                </div>
+              <?php endforeach; ?>
+            </div>
           </div>
         </div>
       </div>

@@ -49,7 +49,7 @@ class PengaduanModel extends CI_Model
                 if ($this->upload->do_upload('img')) {
                     $imgName = $this->upload->data('file_name');
                     $this->db->insert('img', ['id_pengaduan' => $id_pengaduan, 'img' => $imgName]);
-                } else { 
+                } else {
                     flashAlert('error', $this->upload->display_errors());
                     redirect('public/pengaduan');
                 }
@@ -71,6 +71,11 @@ class PengaduanModel extends CI_Model
     {
         return $this->db->select('pengaduan.*, masyarakat.*')->from('pengaduan')->where('pengaduan.id', $id)
             ->join('masyarakat', 'pengaduan.id_masyarakat = masyarakat.id')->get()->row();
+    }
+
+    public function getPengaduanImg($id)
+    {
+        return $this->db->get_where('img', ['id_pengaduan' => $id])->result();
     }
 
     public function getPengaduanByMasyarakat($id)
